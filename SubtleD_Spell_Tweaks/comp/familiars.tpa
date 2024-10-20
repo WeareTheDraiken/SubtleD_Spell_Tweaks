@@ -1649,7 +1649,7 @@ ACTION_IF !(VARIABLE_IS_SET %is_familiar_state%) BEGIN
   OUTER_SET is_familiar_state = %new_state_ind%
 END
 
-ACTION_FOR_EACH fam_cre IN ~fampsd~ ~fampsd25~ ~famfair~ ~famfai25~ ~famfer~ ~famfer25~ ~famrab~ ~famrab25~ ~famcat~ ~famcat25~ ~famimp~ ~famimp25~ ~famdust~ ~famdus25~ ~famquas~ ~famqua25~ BEGIN
+ACTION_FOR_EACH fam_cre IN ~fampsd~ ~fampsd25~ ~famfair~ ~famfai25~ ~famfer~ ~famfer25~ ~famrab~ ~famrab25~ ~famcat~ ~famcat25~ ~famimp~ ~famimp25~ ~famdust~ ~famdus25~ ~famquas~ ~famqua25~ ~wtpdmeph~ ~wtpfairy~ ~wtpferre~ ~wtprabbi~ ~wtpseudo~ ~wtpspide~ ~wtpquasi~ ~wtptaun~ ~wtpimp~ ~wtpcat~ ~wtpdmsum~ ~wtpnag1~ ~wtpnag2~ ~wtpnag3~ ~wtpnag4~ ~wtpnag5~ ~wtpnag6~ ~wtpnag7~ ~wtpnag8~ ~wtpnag9~ BEGIN
   COPY_EXISTING ~%fam_cre%.cre~ ~override~
 	LPF ADD_CRE_EFFECT INT_VAR opcode = 328 target = 1 special = 1 parameter2 = %is_familiar_state% timing = 9 END
   IF_EXISTS BUT_ONLY
@@ -2268,7 +2268,7 @@ give them innate cantrips if it is installed
 
 DEFINE_ACTION_FUNCTION cantrips_familiars BEGIN
 
-ACTION_FOR_EACH fam IN ~fampsd~ ~fampsd25~ ~famfair~ ~famfai25~ ~famfer~ ~famfer25~ ~famrab~ ~famrab25~ ~famcat~ ~famcat25~ ~famimp~ ~famimp25~ ~famquas~ ~famqua25~ ~famdust~ ~famdus25~ BEGIN
+ACTION_FOR_EACH fam IN ~fampsd~ ~fampsd25~ ~famfair~ ~famfai25~ ~famfer~ ~famfer25~ ~famrab~ ~famrab25~ ~famcat~ ~famcat25~ ~famimp~ ~famimp25~ ~famdust~ ~famdus25~ ~famquas~ ~famqua25~ ~wtpdmeph~ ~wtpfairy~ ~wtpferre~ ~wtprabbi~ ~wtpseudo~ ~wtpspide~ ~wtpquasi~ ~wtptaun~ ~wtpimp~ ~wtpcat~ BEGIN
   ACTION_IF (FILE_EXISTS_IN_GAME ~%fam%.cre~) BEGIN
     COPY_EXISTING ~%fam%.cre~ ~override~
       LPF ADD_CRE_EFFECT INT_VAR opcode = 171 target = 1 timing = 1 STR_VAR resource = ~d5ctp01~ END
